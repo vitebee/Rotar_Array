@@ -1,0 +1,18 @@
+var cantidadRotaciones=6
+function setup() {
+  createCanvas(400, 400);
+  var a=[0,1,2,3];
+}
+
+function draw() {
+  for(let i = 0 ; i <= cantidadRotaciones ; i++) {
+  console.log(Rotar(["a","b","c","d"], i), i);
+  }
+  
+}
+
+function Rotar(arr, count) {
+  count -= arr.length * Math.floor(count / arr.length);
+  arr.push.apply(arr, arr.splice(0, count));
+  return arr;
+}
